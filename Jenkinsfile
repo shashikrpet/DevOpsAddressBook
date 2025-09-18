@@ -2,12 +2,12 @@ pipeline {
     agent any
 
       stages {
-        stage('Checkout') {
+   /*     stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/your-repo/your-project.git'
             }
         }
-
+*/
         stage('Build with Maven') {
             steps {
                 sh 'mvn clean install'
