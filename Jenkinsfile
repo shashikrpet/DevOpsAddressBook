@@ -6,7 +6,7 @@ pipeline {
             steps{
                 git 'https://github.com/shashikrpet/DevOpsAddressBook.git'
             }
-        }
+        } 
 
         stage('mvn package'){
             steps{
