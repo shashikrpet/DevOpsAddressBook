@@ -1,6 +1,30 @@
 pipeline {
     agent any
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
+    /*
     tools {
         maven 'M2_HOME'
         terraform 'Terraform-1.3.7'
@@ -52,3 +76,4 @@ pipeline {
         }
      }
 }
+*/
