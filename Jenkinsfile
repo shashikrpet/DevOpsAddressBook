@@ -1,23 +1,26 @@
 pipeline {
     agent any
 
-    triggers {
-    githubPush()
-}
-
-
-    stages{
-        stage('git checkout'){
-            steps{
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shashikrpet/DevOpsAddressBook.git']]])
-
+      stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/your-repo/your-project.git'
             }
-        } 
+        }
 
-        stage('mvn package'){
-            steps{
-                sh 'mvn clean package'
+        stage('Build with Maven') {
+            steps {
+                sh 'mvn clean install'
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build completed successfully!'
+        }
+        failure {
+            echo 'Build failed!'
         }
     }
 }
