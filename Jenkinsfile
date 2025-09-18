@@ -4,7 +4,7 @@ pipeline {
     stages{
         stage('git checkout'){
             steps{
-                   git branch: 'master', url: 'https://github.com/shashikrpet/DevOpsAddressBook.git'
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shashikrpet/DevOpsAddressBook.git']]])
 
             }
         } 
