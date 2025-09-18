@@ -1,7 +1,20 @@
 pipeline {
     agent any
 
+    stages{
+        stage('git checkout'){
+            steps{
+                git 'https://github.com/shashikrpet/DevOpsAddressBook.git'
+            }
+        }
 
+        stage('mvn package'){
+            steps{
+                sh 'mvn clean package'
+            }
+        }
+    }
+}
 
 
 
